@@ -6,5 +6,12 @@ export class Profile {
 
   @Column() gender: string;
 
-  @Column() photo: string;
+  @Column({ nullable: true })
+  photo: string;
+
+  @Column() address: string;
+
+  @Column() country: string;
+
+  @Column() postalCode: string;
 }
