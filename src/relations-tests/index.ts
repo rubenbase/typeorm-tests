@@ -3,7 +3,7 @@ module.exports = (connection: any) => {
     /**********************************
           RUN THE RELATIONS => 1-to-1
       ***********************************/
-    require("./one-to-one/user-profile.ts")(connection);
+    require("./one-to-one/oneToOne.ts")(connection);
 
     /**********************************
           RUN THE RELATIONS => 1-to-N & vcvs

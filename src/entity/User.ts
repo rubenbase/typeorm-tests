@@ -5,7 +5,8 @@ import {
   Column,
   OneToOne,
   JoinColumn,
-  BeforeInsert
+  BeforeInsert,
+  CreateDateColumn
 } from "typeorm";
 import { Profile } from "./Profile";
 import { BaseEntity } from "typeorm/repository/BaseEntity";
@@ -25,10 +26,13 @@ export class User extends BaseEntity {
 
   @Column("text") password: string;
 
-  @Column("timestamp") createdAt: Date;
+  @CreateDateColumn({ type: "timestamptz" })
+  createdAt: Date;
 
-  @Column("boolean", { default: false })
-  confirmed: boolean;
+  // @UpdateDateColumn({ type: 'timestamptz' })
+  // createdAt: Date;
+
+  // @Column("timestamp") createdAt: Date;
 
   @Column("boolean", { default: true })
   active: boolean;
@@ -40,7 +44,7 @@ export class User extends BaseEntity {
   @JoinColumn()
   profile: Profile;
 
-  @OneToOne(type => Company)
+  @OneToOne(type => Company, { nullable: true })
   @JoinColumn()
   company: Company;
 
