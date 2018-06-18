@@ -1,4 +1,13 @@
-import { Entity, PrimaryGeneratedColumn, Column } from "typeorm";
+import {
+  Entity,
+  JoinColumn,
+  OneToOne,
+  PrimaryGeneratedColumn,
+  Column
+} from "typeorm";
+
+import { DeclineReason } from "./DeclineReason";
+import { Plan } from "./Plan";
 
 @Entity()
 export class Subscription {
@@ -15,8 +24,11 @@ export class Subscription {
   @Column({ nullable: true })
   renewed: boolean;
 
-  //faltan fk
-  @Column() planId: string;
+  @OneToOne(type => Plan)
+  @JoinColumn()
+  planId: Plan;
 
-  @Column() declinedReasonId: number;
+  @OneToOne(type => DeclineReason)
+  @JoinColumn()
+  declineReasonId: DeclineReason;
 }

@@ -1,4 +1,12 @@
-import { Entity, PrimaryGeneratedColumn, Column } from "typeorm";
+import { NotificationType } from "./NotificationType";
+import { User } from "./User";
+import {
+  Entity,
+  PrimaryGeneratedColumn,
+  Column,
+  OneToOne,
+  JoinColumn
+} from "typeorm";
 
 @Entity()
 export class Notification {
@@ -13,10 +21,15 @@ export class Notification {
   // ??????????????? see later how to handle this
   @Column() additionalData: string;
 
-  //FKS
-  @Column() notificationTypeId: string;
+  @OneToOne(type => NotificationType)
+  @JoinColumn()
+  notificationTypeId: NotificationType;
 
-  @Column() senderId: string;
+  @OneToOne(type => User)
+  @JoinColumn()
+  senderId: User;
 
-  @Column() recipientId: string;
+  @OneToOne(type => User)
+  @JoinColumn()
+  recipientId: User;
 }

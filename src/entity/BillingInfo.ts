@@ -1,4 +1,12 @@
-import { Entity, PrimaryGeneratedColumn, Column } from "typeorm";
+import {
+  Entity,
+  PrimaryGeneratedColumn,
+  Column,
+  OneToOne,
+  JoinColumn
+} from "typeorm";
+
+import { Subscription } from "./Subscription";
 
 @Entity()
 export class BillingInfo {
@@ -50,6 +58,7 @@ export class BillingInfo {
 
   @Column() bankAccount: string;
 
-  // fk, falta hacer una relaicon
-  @Column() subscriptionId: string;
+  @OneToOne(type => Subscription)
+  @JoinColumn()
+  subscriptionId: Subscription;
 }

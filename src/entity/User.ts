@@ -12,7 +12,7 @@ import { BaseEntity } from "typeorm/repository/BaseEntity";
 
 @Entity("users")
 @Entity()
-export class Users extends BaseEntity {
+export class User extends BaseEntity {
   @PrimaryGeneratedColumn("uuid") id: string;
 
   @Column("varchar", { length: 255 })
