@@ -42,7 +42,7 @@ export class User extends BaseEntity {
 
   @OneToOne(type => Company)
   @JoinColumn()
-  companyId: Company;
+  company: Company;
 
   @BeforeInsert()
   async hashPasswordBeforeInsert() {

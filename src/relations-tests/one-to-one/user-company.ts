@@ -16,7 +16,7 @@ module.exports = (connection: any) => {
     user.email = "whatever@whatever.com";
     user.password = "whateverPassword";
     user.lastname = "martinez";
-    user.profile = profile;
+    user.company = company;
     await connection.manager.save(user);
 
     return "User-Profile Relation Runned !";
