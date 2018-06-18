@@ -7,12 +7,15 @@ import {
 } from "typeorm";
 
 import { Subscription } from "./Subscription";
+import { User } from "./User";
 
 @Entity()
 export class BillingInfo {
   @PrimaryGeneratedColumn() id: number;
 
-  //falta poner de pk el userid
+  @OneToOne(type => User, { primary: true })
+  @JoinColumn()
+  userId: User;
 
   @Column() nif: string;
 

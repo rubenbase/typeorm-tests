@@ -1,4 +1,4 @@
-import { Users } from "./../../entity/User";
+import { User } from "./../../entity/User";
 import { Profile } from "./../../entity/Profile";
 
 module.exports = (connection: any) => {
@@ -11,7 +11,7 @@ module.exports = (connection: any) => {
     profile.postalCode = "15003";
     await connection.manager.save(profile);
 
-    const user = new Users();
+    const user = new User();
     user.name = "manolo";
     user.email = "whatever@whatever.com";
     user.password = "whateverPassword";

@@ -18,7 +18,6 @@ export class Notification {
 
   @Column() url: string;
 
-  // ??????????????? see later how to handle this
   @Column() additionalData: string;
 
   @OneToOne(type => NotificationType)
