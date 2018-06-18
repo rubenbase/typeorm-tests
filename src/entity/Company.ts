@@ -7,4 +7,10 @@ export class Company {
   @Column() name: string;
 
   @Column() cif: string;
+
+  @Column() address: string;
+
+  @Column() country: string;
+
+  @Column() postalCode: string;
 }

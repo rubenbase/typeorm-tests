@@ -8,9 +8,9 @@ export class Plan {
 
   @Column() description: string;
 
-  @Column("double") price_per_year: number;
+  @Column("float") price_per_year: number;
 
-  @Column("double") price_per_month: number;
+  @Column("float") price_per_month: number;
 
   @Column() duration: number;
 }
