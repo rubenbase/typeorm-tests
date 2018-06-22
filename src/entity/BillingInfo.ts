@@ -57,6 +57,7 @@ export class BillingInfo {
 
   @Column() createdAt: string;
 
+  // Need to FK this
   @Column() paymentMethods: string;
 
   @Column() bankAccount: string;
