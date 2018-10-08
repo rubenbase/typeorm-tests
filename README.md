@@ -8,4 +8,4 @@ Steps to run this project:
 
 That's it!
 
-You can look at the examples of relations. More examples will be added creating a complex playground of a enterprise database creation.
+You can look at the examples of relations inside the ```src``` folder. More examples will be added creating a complex playground of a enterprise database creation.
